@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fastcampus-allinone-package-react/static/css/main.46db7fd9.css",
+    "main.js": "/fastcampus-allinone-package-react/static/js/main.603cf57a.js",
+    "static/js/453.ad0e490e.chunk.js": "/fastcampus-allinone-package-react/static/js/453.ad0e490e.chunk.js",
+    "index.html": "/fastcampus-allinone-package-react/index.html",
+    "main.46db7fd9.css.map": "/fastcampus-allinone-package-react/static/css/main.46db7fd9.css.map",
+    "main.603cf57a.js.map": "/fastcampus-allinone-package-react/static/js/main.603cf57a.js.map",
+    "453.ad0e490e.chunk.js.map": "/fastcampus-allinone-package-react/static/js/453.ad0e490e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.46db7fd9.css",
+    "static/js/main.603cf57a.js"
+  ]
+}
