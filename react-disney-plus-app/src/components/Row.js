@@ -1,9 +1,12 @@
 import React, {useCallback, useEffect, useState} from 'react'
 import axios from '../api/axios';
 import './Row.css';
+import MovieModal from "./MovieModal";
 
 const Row = ({title, id, fetchUrl}) => {
   const [movies, setMovies] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [movieSelected, setMovieSelection] = useState({});
 
   /**
    * 아래 useCallback 은 fetchUrl이 변경될 때 함수를 생성하여 API 를 호출하게 한다.
@@ -21,6 +24,11 @@ const Row = ({title, id, fetchUrl}) => {
   useEffect(() => {
     fetchMovieData();
   }, [fetchMovieData]);
+
+  const handleClick = (movie) =>{
+    setModalOpen(true);
+    setMovieSelection(movie);
+  }
 
   return (
     <div>
@@ -41,6 +49,7 @@ const Row = ({title, id, fetchUrl}) => {
               className='row__poster'
               src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
               alt={movie.name}
+              onClick={() => handleClick(movie)}
             />
           ))}
         </div>
@@ -53,6 +62,12 @@ const Row = ({title, id, fetchUrl}) => {
           </span>
         </div>
       </div>
+      {modalOpen &&
+        <MovieModal
+          {...movieSelected}
+          setModalOpen={setModalOpen}
+        />
+      }
     </div>
   )
 }
